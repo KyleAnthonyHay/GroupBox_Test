@@ -10,10 +10,14 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            GroupBox("My Content") {
+                Text("Hello, World!")
+            }.frame(width: 240)
+                .groupBoxStyle(.music)
+            
+            MusicPlayerView()
+            
+
         }
         .padding()
     }
@@ -22,3 +26,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
