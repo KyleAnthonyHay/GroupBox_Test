@@ -9,17 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            GroupBox("My Content") {
-                Text("Hello, World!")
-            }.frame(width: 240)
-                .groupBoxStyle(.music)
-            
-            MusicPlayerView()
-            
-
+        ZStack{
+            Rectangle()
+                .fill(.teal.gradient.opacity(0.6))
+                .ignoresSafeArea()
+            VStack {
+                MusicPlayerView()
+            }.padding()
         }
-        .padding()
+        
     }
 }
 

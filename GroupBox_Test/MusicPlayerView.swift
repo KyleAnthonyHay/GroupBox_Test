@@ -12,29 +12,39 @@ struct MusicPlayerView: View {
         GroupBox {
             GroupBox {
                 VStack {
-                    // MARK: Title
                     HStack {
+                        
+                        // MARK: Title
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 50, height: 50)
                             .foregroundStyle(.secondary)
-                        VStack {
-                            Text("Music Player").font(.headline.bold())
-                            Text("Artist Name").font(.footnote)
+                        
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Cool Song Title")
+                                .font(.headline.bold())
+                            
+                            Text("Artist Name")
+                                .font(.footnote)
                                 .foregroundStyle(.secondary)
                         }
+                        
                         Spacer()
-                    }.padding(.bottom, 10)
-                    // MARK: Progress View
+                    }
+                    .padding(.bottom, 8)
+                    
+                    // MARK: Progress
                     ProgressView(value: 0.4, total: 1)
                         .tint(.secondary)
                         .padding(.bottom, 20)
+                    
                     // MARK: Buttons
-                    HStack (spacing: 30){
+                    HStack(spacing: 30) {
                         Image(systemName: "backward.fill")
-                        Image(systemName: "play.fill")
-                        Image(systemName : "forward.fill")
-                    }.foregroundStyle(.secondary)
-                        .font(.title)
+                        Image(systemName: "pause.fill")
+                        Image(systemName: "forward.fill")
+                    }
+                    .foregroundStyle(.secondary)
+                    .font(.title)
                 }
             }
         } label: {
@@ -48,7 +58,7 @@ struct MusicPlayerView: View {
 
 struct MusicGroupBoxStyle: GroupBoxStyle {
     func makeBody(configuration: Configuration) -> some View {
-        VStack (alignment: .leading) {
+        VStack(alignment: .leading) {
             configuration.label
                 .bold()
                 .foregroundStyle(.pink)
